@@ -1,0 +1,17 @@
+@media (max-width: 800px) {
+    img {
+        width: 55%;
+        margin-top: -2%;
+    }
+}
+
+@media (min-width: 800px) {
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        width: 15%;
+    }
+    img {
+        margin-top: -1%;
+    }
+}

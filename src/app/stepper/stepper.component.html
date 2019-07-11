@@ -1,0 +1,59 @@
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+      </button> -->
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Nome</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Seu nome" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Avançar</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Email</ng-template>
+            <mat-form-field>
+                <input type="email" name="email" ngModel [email]="true" matInput placeholder="e-mail@exemplo" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Retroceder</button>
+                <button mat-button matStepperNext>Avançar</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Senha</ng-template>
+            <mat-form-field>
+                <input type="password" name="password" ngModel matInput placeholder="Senha" formControlName="thirdCtrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Retroceder</button>
+                <button mat-button matStepperNext>Avançar</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="fourthFormGroup">
+        <form [formGroup]="fourthFormGroup">
+            <ng-template matStepLabel>Foto de perfil</ng-template>
+            <app-input-image></app-input-image>
+            <div>
+                <button mat-button matStepperPrevious>Retroceder</button>
+                <button mat-button matStepperNext>Avançar</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Finalizar</ng-template>
+        Você Terminou! Clique em "Avançar" para visualizar seus contatos
+        <div>
+            <button mat-button matStepperPrevious>Retroceder</button>
+            <button mat-button (click)="stepper.reset()">Resetar</button>
+            <button mat-button (click)="stepper.reset()">Avançar</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
