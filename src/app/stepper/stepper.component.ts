@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -14,8 +15,11 @@ export class StepperComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
+  respostaNome: string;
+  respostaEmail: string;
+  respostaSenha: string;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private cookie: CookieService) { }
 
   ngOnInit() {
     this.firstFormGroup = this.formBuilder.group({
@@ -30,6 +34,37 @@ export class StepperComponent implements OnInit {
     this.fourthFormGroup = this.formBuilder.group({
       fourthCtrl: ['', Validators.required]
     });
+    this.respostaNome = '';
+    this.respostaEmail = '';
+    this.respostaSenha = '';
   }
+
+  atualizaRespostaNome(resposta: Event) {
+    this.respostaNome = (resposta.target as HTMLInputElement).value;
+    // console.log(this.respostaNome);
+    
+  }
+
+  atualizaRespostaEmail(resposta: Event) {
+    this.respostaEmail = (resposta.target as HTMLInputElement).value;
+    console.log(this.respostaEmail);
+    
+  }
+
+  atualizaRespostaSenha(resposta: Event) {
+    this.respostaSenha = (resposta.target as HTMLInputElement).value;
+    // console.log(this.respostaSenha);
+    
+  }
+
+  setCookie() {
+    console.log('teste do tchais');
+    this.cookie.set('username', this.respostaNome);
+    this.cookie.set('useremail', this.respostaEmail);
+    this.cookie.set('userpassword', this.respostaSenha);
+    // this.cookie.set('userimage=', this.respostaXXX);
+
+  }
+
 
 }

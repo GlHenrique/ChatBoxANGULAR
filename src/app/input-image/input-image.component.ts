@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-input-image',
   templateUrl: './input-image.component.html',
@@ -7,13 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputImageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
 
-  inputImage() {
-    
+  atualizaRespostaImage(event) {
+    console.log(event);
+    const image = <FileList>event.srcElement.files;
+    console.log(image[0]);
   }
+
+
+
+
+
 
 }

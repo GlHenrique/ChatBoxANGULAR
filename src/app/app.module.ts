@@ -16,6 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { InputImageComponent } from './input-image/input-image.component';
+import { MatFileUploadModule } from 'angular-material-fileupload';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -42,9 +44,13 @@ import { InputImageComponent } from './input-image/input-image.component';
     MatStepperModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatFileUploadModule
+
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

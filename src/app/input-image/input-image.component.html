@@ -1,6 +1,11 @@
-<button type="submit" matInput formControlName="fourthCtrl" mat-raised-button (click)="inputImage()">
-        Inserir foto
+<input formControlName="fourthCtrl" matInput>
+<button mat-raised-button>
+<div>
+    <label for="inputImage">Inserir foto
         <i class="material-icons">
             insert_photo
-        </i>
+        </i>                        
+    </label>
+</div>               
 </button>
+<input class="custom-file-input" (change)='atualizaRespostaImage($event)' required="false" type="file" accept=".png, .jpg, .bmp, .gif, .svg" id="inputImage">
