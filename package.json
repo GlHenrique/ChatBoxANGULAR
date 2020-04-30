@@ -26,7 +26,7 @@
     "bootstrap": "^4.3.1",
     "hammerjs": "^2.0.8",
     "humanize-bytes": "^1.0.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-smn-ui": "^2.9.6",
     "ngx-cookie-service": "^2.2.0",
     "rxjs": "~6.4.0",
